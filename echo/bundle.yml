@@ -1,0 +1,22 @@
+---
+gort_bundle_version: 1
+
+name: entrypoint
+version: 0.0.1
+author: Matt Titmus <matthew.titmus@gmail.com>
+homepage: https://guide.getgort.io
+description: A test bundle.
+long_description: |-
+  This is test bundle.
+  There are many like it, but this one is mine.
+
+docker:
+  image: ubuntu
+  tag: 20.04
+
+commands:
+  bar:
+    description: "Echos back anything sent to it."
+    executable: [ "/bin/echo" ]
+    rules:
+      - allow
