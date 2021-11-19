@@ -1,0 +1,24 @@
+---
+gort_bundle_version: 1
+
+name: testing
+version: 0.0.1
+author: Matt Titmus <matthew.titmus@gmail.com>
+homepage: https://guide.getgort.io
+description: A test bundle for testing templates.
+long_description: |-
+  This is test bundle, for testing templates.
+
+image: clockworksoul/kubectl
+
+templates:
+  command: :-
+    {{ header | color "#0000CD" }}
+    {{ text | monospace true }}{{ .Response.Out }}{{ endtext }}
+
+commands:
+  kubectl:
+    description: "This is kubectl. It's help is very long."
+    executable: [ "/usr/local/bin/kubectl" ]
+    rules:
+      - allow

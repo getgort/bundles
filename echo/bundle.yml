@@ -1,20 +1,27 @@
 ---
 gort_bundle_version: 1
 
-name: echo
+name: simple
 version: 0.0.1
 author: Matt Titmus <matthew.titmus@gmail.com>
 homepage: https://guide.getgort.io
-description: A test bundle.
+description: A simple command bundle.
 long_description: |-
-  This is test bundle.
-  There are many like it, but this one is mine.
+  This is avery simple command bundle that includes a few very simple commands.
 
-docker:
-  image: ubuntu
-  tag: 20.04
+image: ubuntu:20.04
+
+templates:
+  command: :-
+    {{ header | color "#0F52BA" }}
+    {{ text | monospace true }}{{ .Response.Out }}{{ endtext }}
 
 commands:
+  date:
+    description: "Display the date and time."
+    executable: [ "/bin/date" ]
+    rules:
+      - allow
   echo:
     description: "Echos back anything sent to it."
     executable: [ "/bin/echo" ]
