@@ -27,7 +27,7 @@ commands:
     executable: [ "/bin/echo" ]
     rules:
       - allow
-  date:
+  env:
     description: "Print environment."
     executable: [ "/usr/bin/env" ]
     rules:
