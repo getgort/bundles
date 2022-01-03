@@ -3,13 +3,13 @@ gort_bundle_version: 1
 
 name: simple
 version: 0.0.1
+image: ubuntu:20.04
+
 author: Matt Titmus <matthew.titmus@gmail.com>
 homepage: https://guide.getgort.io
 description: A simple command bundle.
 long_description: |-
-  This is avery simple command bundle that includes a few very simple commands.
-
-image: ubuntu:20.04
+  This is a very simple command bundle that includes a few very simple commands.
 
 templates:
   command: :-
@@ -25,5 +25,10 @@ commands:
   echo:
     description: "Echos back anything sent to it."
     executable: [ "/bin/echo" ]
+    rules:
+      - allow
+  date:
+    description: "Print environment."
+    executable: [ "/usr/bin/env" ]
     rules:
       - allow
