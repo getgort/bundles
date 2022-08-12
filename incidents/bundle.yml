@@ -1,0 +1,16 @@
+---
+gort_bundle_version: 1
+
+name: incidents
+description: "Convenience commands for automating more of the incident lifecycle."
+version: 0.0.1
+image: getgort/incidents:0.0.1
+
+commands:
+  bookmark:
+    executable: [ /bundle/bookmark ]
+    description: Bookmarks relevant links in a pagerduty incident slack channel.
+    rules:
+      - allow
+    input:
+      advanced: true
